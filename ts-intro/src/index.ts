@@ -3,16 +3,19 @@
 */
 
 class Heroe {
-    alterEgo: string;
-    edad: number;
-    nombreReal: string;
-    
-    imprimirNombre () {
-        return this.alterEgo + ' ' + this.nombreReal;
-    }
+    // alterEgo: string;
+    // edad: number;
+    // nombreReal: string;
+
+    constructor (
+        public alterEgo: string,
+        public edad: number,
+        public nombreReal: string
+    ) { }
+
 }
 
-const ironMan = new Heroe();
+const ironMan = new Heroe('Iron Man', 45, 'Tony Stark');
 
 console.log(ironMan);
 
