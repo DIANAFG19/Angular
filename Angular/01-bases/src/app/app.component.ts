@@ -5,5 +5,11 @@ import { Component } from '@angular/core';
   templateUrl: './app.component.html'
 })
 export class AppComponent {
-  title = 'Contador App';
+  titulo: string = 'Contador App';
+  numero: number = 10;
+
+  acumular (valor: number) {
+    this.numero += valor;
+  }
+
 }
