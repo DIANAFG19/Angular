@@ -7,7 +7,7 @@
     </li>
 </ul>
 
-<h2>Héroe Borrado</h2>
+<h2 *ngIf="apareceBorrado">Héroe Borrado</h2>
 <ul>
     <li *ngFor="let heroeBorrado of heroesBorrados">
         {{ heroeBorrado }}
