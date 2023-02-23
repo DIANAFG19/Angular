@@ -12,17 +12,22 @@ interface Personaje {
 
 export class MainPageComponent {
 
+  personajes: Personaje[] = [];
+
   nuevo: Personaje = {
-    nombre: 'Trunks',
-    poder: 14000
+    nombre: '',
+    poder: 0
   }
   
   agregar () {
-    console.log(this.nuevo);
-  }
-
-  cambiarNombre (event: any) {
-    console.log(event.target.value);
+    if (this.nuevo.nombre.trim().length === 0) {
+      return;
+    }
+    this.personajes.push(this.nuevo);
+    this.nuevo = {
+      nombre: '',
+      poder: 0
+    }
   }
 
 }
