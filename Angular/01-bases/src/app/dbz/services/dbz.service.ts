@@ -14,18 +14,17 @@ export class DbzService {
         {
             nombre: 'Vegetta',
             poder: 90000
-        },
-        {
-            nombre: 'Trunks',
-            poder: 30000
-        },
+        }
     ];
 
     get personajes (): Personaje[] {
         return [...this._personajes];
     }
 
-    constructor () {
-        console.log('Servicio inicializado...');
+    constructor () {}
+
+    agregarPersonaje(personaje: Personaje) {
+        this._personajes.push(personaje);
     }
+
 }
