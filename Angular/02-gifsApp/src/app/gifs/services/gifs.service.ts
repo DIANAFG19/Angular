@@ -11,6 +11,8 @@ export class GifsService {
 
   private _historial: string[] = [];
 
+  public resultados: any[] = [];
+
   get historial () {
     return [...this._historial];
   }
@@ -26,9 +28,10 @@ export class GifsService {
       this._historial = this._historial.splice(0, 10);
     }
 
-    this.http.get('https://api.giphy.com/v1/gifs/search?api_key=q4S1vpwgkg67zXGmv42XxK1tv0Ih8Yag&q=one piece&limit=10')
+    this.http.get(`https://api.giphy.com/v1/gifs/search?api_key=${ this.apiKey }&q=${ query }&limit=10`)
           .subscribe((resp: any) => {
             console.log(resp.data);
+            this.resultados = resp.data;
           });
     
   }
