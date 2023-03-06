@@ -24,16 +24,16 @@ export class PaisInputComponent implements OnInit {
     this.debouncer
       .pipe(debounceTime(300))
       .subscribe( valor => {
-        this.onDebounce.emit( valor );
+        this.onDebounce.emit(valor);
       });
   }
 
   buscar() {
-    this.onEnter.emit( this.termino );
+    this.onEnter.emit(this.termino);
   }
 
   teclaPresionada() {
-    this.debouncer.next( this.termino );
+    this.debouncer.next(this.termino);
   }
   
 
