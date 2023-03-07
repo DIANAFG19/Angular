@@ -13,6 +13,7 @@ import { VentasModule } from './ventas/ventas.module';
 import localeEs from '@angular/common/locales/es-HN';
 import localeFr from '@angular/common/locales/fr';
 import { registerLocaleData } from '@angular/common';
+
 registerLocaleData( localeEs );
 registerLocaleData( localeFr );
 
@@ -32,4 +33,5 @@ registerLocaleData( localeFr );
   ],
   bootstrap: [AppComponent]
 })
+
 export class AppModule { }
