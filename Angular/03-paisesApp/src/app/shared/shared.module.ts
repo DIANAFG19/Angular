@@ -4,7 +4,6 @@ import { RouterModule } from '@angular/router';
 
 import { SidebarComponent } from './sidebar/sidebar.component';
 
-
 @NgModule({
   declarations: [
     SidebarComponent
@@ -17,4 +16,5 @@ import { SidebarComponent } from './sidebar/sidebar.component';
     RouterModule
   ]
 })
+
 export class SharedModule { }

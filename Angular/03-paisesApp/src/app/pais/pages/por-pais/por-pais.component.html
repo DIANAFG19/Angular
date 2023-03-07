@@ -5,8 +5,8 @@
     <div class="row">
         <div class="col">
             <app-pais-input
-                (onEnter)="buscar( $event )"
-                (onDebounce)="sugerencias( $event )"
+                (onEnter)="buscar($event)"
+                (onDebounce)="sugerencias($event)"
                 placeholder="Buscar país...">
             </app-pais-input>
         </div>
@@ -22,13 +22,12 @@
             </a>
         </li>
         <li class="list-group-item list-group-item-action"
-            (click)="buscarSugerido( termino )">
+            (click)="buscarSugerido(termino)">
             <a class="nav-link">
                 Buscar "{{ termino }}"
             </a>
         </li>
     </ul>
-
 
     <hr>
 
@@ -41,9 +40,6 @@
 
 <div *ngIf="paises.length > 0" class="row">
     <div class="col">
-
         <app-pais-tabla [paises]="paises"></app-pais-tabla>
-
-
     </div>
 </div>
