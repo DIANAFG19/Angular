@@ -72,14 +72,6 @@
       "characters": "Dick Grayson"
     },
     {
-      "id": "dc-blue",
-      "superhero": "Blue Beetle",
-      "publisher": "DC Comics",
-      "alter_ego": "Dan Garret",
-      "first_appearance": "Mystery Men Comics #1",
-      "characters": "Dan Garret, Ted Kord, Jaime Reyes"
-    },
-    {
       "id": "dc-black",
       "superhero": "Black Canary",
       "publisher": "DC Comics",
@@ -109,7 +101,7 @@
       "publisher": "Marvel Comics",
       "alter_ego": "Tony Stark",
       "first_appearance": "Tales of Suspense #39",
-      "characters": "Tony Stark"
+      "characters": "Tony Stark Jr"
     },
     {
       "id": "marvel-thor",
