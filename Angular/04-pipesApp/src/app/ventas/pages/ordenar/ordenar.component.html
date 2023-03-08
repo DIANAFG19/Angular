@@ -1,31 +1,25 @@
 <div class="text-layout">
     <h1>Pipes personalizados</h1>
     <p>Pipes creados por {{'nosotros'| mayusculas:enMayusculas }} </p>
-
 </div>
 
 <p-toolbar>
     <div class="p-toolbar-group-left"></div>
-    
     <div class="p-toolbar-group-right">
-
         <button pButton 
                 label="toggle mayúsculas"
                 class="p-mr-1 p-button-warning"
                 (click)="cambiar()"></button>
-
         <button pButton
                 icon="pi pi-sort"
                 label="Por nombre"
                 class="p-mr-1"
                 (click)="cambiarOrden('nombre')"></button>
-        
         <button pButton
                 icon="pi pi-sort"
                 label="Vuela"
                 class="p-mr-1 p-button-success"
                 (click)="cambiarOrden('vuela')"></button>
-
         <button pButton
                 icon="pi pi-sort"
                 label="Por color"
@@ -33,7 +27,6 @@
                 (click)="cambiarOrden('color')"></button>
     </div>
 </p-toolbar>
-
 
 <div class="p-grid">
     <div class="p-col p-mt-2">
@@ -55,8 +48,6 @@
         </p-table>
     </div>
 </div>
-
-
 
 <div class="p-grid">
     <div class="p-col p-mt-2">
