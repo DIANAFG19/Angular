@@ -6,6 +6,7 @@ import { NoComunesComponent } from './ventas/pages/no-comunes/no-comunes.compone
 import { NumerosComponent } from './ventas/pages/numeros/numeros.component';
 import { OrdenarComponent } from './ventas/pages/ordenar/ordenar.component';
 
+
 const routes: Routes = [
   {
     path: '',
@@ -28,15 +29,16 @@ const routes: Routes = [
     path: '**',
     redirectTo: ''
   }
+
 ];
+
 
 @NgModule({
   imports: [
-    RouterModule.forRoot(routes)
+    RouterModule.forRoot( routes )
   ],
   exports: [
     RouterModule
   ]
 })
-
 export class AppRouterModule { }

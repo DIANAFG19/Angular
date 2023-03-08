@@ -5,6 +5,8 @@ import { PrimeNgModule } from '../prime-ng/prime-ng.module';
 
 import { MenuComponent } from './menu/menu.component';
 
+
+
 @NgModule({
   declarations: [
     MenuComponent
@@ -17,5 +19,4 @@ import { MenuComponent } from './menu/menu.component';
     PrimeNgModule
   ]
 })
-
 export class SharedModule { }
