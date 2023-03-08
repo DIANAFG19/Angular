@@ -1,3 +1,4 @@
+
 <h1>
     {{ ( heroe.id )? 'Editar' : 'Nuevo' }}
     Héroe
@@ -9,7 +10,7 @@
      fxLayout.xs="column">
 
     <div fxFlex="50" fxLayout="column">
-
+        
         <div fxLayout="row" 
              fxLayout.xs="column" 
              fxLayoutGap="20px">
@@ -20,6 +21,7 @@
                        [(ngModel)]="heroe.superhero"
                        required>
             </mat-form-field>
+    
             <mat-form-field fxFlex="100">
                 <mat-label>Alter Ego</mat-label>
                 <input matInput
@@ -28,6 +30,7 @@
                        required>
             </mat-form-field>
         </div>
+
 
         <mat-form-field>
             <mat-label>Primera Aparición</mat-label>
@@ -66,6 +69,7 @@
 
         <br>
 
+
         <div fxLayout>
             <button mat-raised-button 
                     color="primary"
@@ -73,7 +77,9 @@
                 <mat-icon>edit</mat-icon>
                 {{ ( heroe.id )? 'Actualizar' : 'Crear' }}
             </button>
+        
             <span class="spacer"></span>
+
             <button *ngIf="heroe.id"
                     mat-raised-button
                     (click)="borrarHeroe()"
@@ -82,7 +88,8 @@
                 Borrar
             </button>
         </div>
-        
+
+
     </div>
 
     <div fxFlex="50">

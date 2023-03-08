@@ -1,5 +1,4 @@
 import { Pipe, PipeTransform } from '@angular/core';
-
 import { Heroe } from '../interfaces/heroes.interface';
 
 @Pipe({
@@ -8,7 +7,7 @@ import { Heroe } from '../interfaces/heroes.interface';
 })
 export class ImagenPipe implements PipeTransform {
 
-  transform(heroe: Heroe): string {
+  transform( heroe: Heroe ): string {
 
     if( !heroe.id && !heroe.alt_img ) {
       return 'assets/no-image.png';
@@ -17,6 +16,7 @@ export class ImagenPipe implements PipeTransform {
     } else {
       return `assets/heroes/${ heroe.id }.jpg`;
     }
+
 
   }
 

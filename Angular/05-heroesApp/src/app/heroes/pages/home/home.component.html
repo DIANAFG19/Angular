@@ -1,5 +1,7 @@
-<mat-sidenav-container fullscreen>
 
+
+<mat-sidenav-container fullscreen>
+    
     <mat-sidenav #sidenav mode="push">
         
         <mat-toolbar color="primary">
@@ -8,7 +10,8 @@
             <button mat-icon-button
                     (click)="sidenav.toggle()">
                 <mat-icon>menu</mat-icon>
-            </button>        
+            </button>
+            
         </mat-toolbar>
 
         <mat-nav-list>
@@ -18,18 +21,21 @@
                 <mat-icon mat-list-icon>label</mat-icon>
                 <span>Listado de Héroes</span>
             </a>
+
             <a routerLink="./agregar"
                mat-list-item
                (click)="sidenav.toggle()">
                 <mat-icon mat-list-icon>add</mat-icon>
                 <span>Añadir Héroe</span>
             </a>
+
             <a routerLink="./buscar"
                mat-list-item
                (click)="sidenav.toggle()">
                 <mat-icon mat-list-icon>search</mat-icon>
                 <span>Búscar Héroe</span>
             </a>
+            
         </mat-nav-list>
         
     </mat-sidenav>
@@ -39,11 +45,17 @@
                 (click)="sidenav.toggle()">
             <mat-icon>menu</mat-icon>
         </button>
+
         <span class="spacer"></span>
-        <button mat-button>
+
+        <span>{{ auth.usuario }} </span>
+
+        <button mat-button
+                (click)="logout()">
             Logout
         </button>
     </mat-toolbar>
+
 
     <div class="container">
         <router-outlet></router-outlet>
