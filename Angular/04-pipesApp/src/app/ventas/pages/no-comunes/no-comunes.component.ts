@@ -35,7 +35,6 @@ export class NoComunesComponent  {
     this.clientes.pop();
   }
 
-
   // KeyValue Pipe
   persona = {
     nombre: 'Fernando',
@@ -59,12 +58,9 @@ export class NoComunesComponent  {
     },
   ]
 
-
   // Async Pipe
   miObservable = interval(2000); // 0,1,2,3,4,5,6,
-
   valorPromesa = new Promise( (resolve, reject) => {
-
     setTimeout(() => {
       resolve( 'Tenemos data de promesa' );
     }, 3500 );
