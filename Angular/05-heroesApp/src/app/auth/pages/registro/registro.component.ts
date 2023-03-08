@@ -1,16 +1,11 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-registro',
-  templateUrl: './registro.component.html',
-  styles: [
-  ]
+  templateUrl: './registro.component.html'
 })
-export class RegistroComponent implements OnInit {
+export class RegistroComponent {
 
   constructor() { }
-
-  ngOnInit(): void {
-  }
 
 }
