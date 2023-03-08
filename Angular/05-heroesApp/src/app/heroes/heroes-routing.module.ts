@@ -22,11 +22,9 @@ const rutas: Routes = [
   }
 ];
 
-
-
 @NgModule({
   imports: [
-    RouterModule.forChild( rutas )
+    RouterModule.forChild(rutas)
   ],
   exports: [
     RouterModule
