@@ -124,5 +124,8 @@
       }
     }
   },
-  "defaultProject": "mapasApp"
+  "defaultProject": "mapasApp",
+  "cli": {
+    "analytics": "447ad5ce-7ae8-4c79-8343-187901a03154"
+  }
 }
