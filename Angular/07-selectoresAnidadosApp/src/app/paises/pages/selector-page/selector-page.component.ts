@@ -49,6 +49,7 @@ export class SelectorPageComponent implements OnInit {
       )
       .subscribe( paises => {
         this.paises = paises;
+        console.log(this.paises);
         this.cargando = false;
     });
 
@@ -65,6 +66,7 @@ export class SelectorPageComponent implements OnInit {
       .subscribe( paises => {
         // this.fronteras = pais?.borders || [];
         this.fronteras = paises;
+        console.log(this.fronteras);
         this.cargando = false;
       })
 

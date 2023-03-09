@@ -10,7 +10,7 @@ import { PaisSmall, Pais } from '../interfaces/paises.interface';
 })
 export class PaisesService {
 
-  private baseUrl: string = 'https://restcountries.eu/rest/v2'
+  private baseUrl: string = 'https://restcountries.com/v2'
   private _regiones: string[] = ['Africa', 'Americas', 'Asia', 'Europe', 'Oceania'];
 
   get regiones(): string[] {
@@ -21,7 +21,7 @@ export class PaisesService {
 
   getPaisesPorRegion( region: string ): Observable<PaisSmall[]> {
 
-    const url: string = `${ this.baseUrl }/region/${ region }?fields=alpha3Code;name`
+    const url: string = `${ this.baseUrl }/region/${ region }?fields=alpha3Code,name`
     return this.http.get<PaisSmall[]>( url );
   }
 
@@ -36,7 +36,7 @@ export class PaisesService {
   }
 
   getPaisPorCodigoSmall( codigo: string ): Observable<PaisSmall> {
-    const url = `${ this.baseUrl }/alpha/${ codigo }?fields=alpha3Code;name`;
+    const url = `${ this.baseUrl }/alpha/${ codigo }?fields=alpha3Code,name`;
     return this.http.get<PaisSmall>( url );
   }
 
