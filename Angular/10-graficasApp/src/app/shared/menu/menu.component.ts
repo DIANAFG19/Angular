@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 
 interface MenuItem {
   ruta: string;
@@ -17,13 +17,12 @@ interface MenuItem {
   ]
 })
 export class MenuComponent {
-
+  
   menu: MenuItem[] = [
     { ruta: '/graficas/barra', texto: 'Barras' },
     { ruta: '/graficas/barra-doble', texto: 'Barras Dobles' },
     { ruta: '/graficas/dona', texto: 'Dona' },
     { ruta: '/graficas/dona-http', texto: 'Dona Http' },
-
   ];
 
 }
