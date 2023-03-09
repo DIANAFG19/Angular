@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+
 import { AgregarComponent } from './pages/agregar/agregar.component';
 
 const routes: Routes = [
