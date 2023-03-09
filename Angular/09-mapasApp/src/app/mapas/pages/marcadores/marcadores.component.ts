@@ -33,7 +33,7 @@ export class MarcadoresComponent implements AfterViewInit {
   @ViewChild('mapa') divMapa!: ElementRef;
   mapa!: mapboxgl.Map;
   zoomLevel: number = 15;
-  center: [number, number] = [ -75.921029433568, 45.28719674822362 ];
+  center: [number, number] = [ -99.1566962, 19.4204611 ];
 
   // Arreglo de marcadores
   marcadores: MarcadorColor[] = [];
@@ -41,23 +41,18 @@ export class MarcadoresComponent implements AfterViewInit {
   constructor() { }
 
   ngAfterViewInit(): void {
-    
     this.mapa = new mapboxgl.Map({
       container: this.divMapa.nativeElement,
       style: 'mapbox://styles/mapbox/streets-v11',
       center: this.center,
       zoom: this.zoomLevel
     });
-
     this.leerLocalStorage();
-
     // const markerHtml: HTMLElement = document.createElement('div');
     // markerHtml.innerHTML = 'Hola Mundo';
-
     // new mapboxgl.Marker()
     //   .setLngLat( this.center )
     //   .addTo( this.mapa );
-
   }
 
   agregarMarcador() {
