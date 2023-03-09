@@ -33,23 +33,18 @@ export class ErrorMsgDirective implements OnInit, OnChanges {
   }
 
   ngOnChanges(changes: SimpleChanges): void {
-    
     // if ( changes.mensaje ) {
     //   const mensaje = changes.mensaje.currentValue;
     //   this.htmlElement.nativeElement.innerText = mensaje;
     // }
-
     // if ( changes.color ) {
     //   const color = changes.color.currentValue;
     //   this.htmlElement.nativeElement.style.color = color;
     // }
-
     // console.log(changes)
-
   }
 
   ngOnInit(): void {
-
     // console.log(this.color); // undefined
     // console.log(this.mensaje); // undefined
     this.setEstilo();

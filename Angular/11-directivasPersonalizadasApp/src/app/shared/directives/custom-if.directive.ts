@@ -18,5 +18,4 @@ export class CustomIfDirective {
     private viewContainer: ViewContainerRef
   ) {}
 
-
 }
