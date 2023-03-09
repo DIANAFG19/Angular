@@ -3,9 +3,7 @@ import { ChartDataSets } from 'chart.js';
 
 @Component({
   selector: 'app-barras-doble',
-  templateUrl: './barras-doble.component.html',
-  styles: [
-  ]
+  templateUrl: './barras-doble.component.html'
 })
 export class BarrasDobleComponent {
 
