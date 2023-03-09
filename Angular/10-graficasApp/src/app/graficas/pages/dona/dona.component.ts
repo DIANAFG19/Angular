@@ -4,16 +4,12 @@ import { Color, Label, MultiDataSet } from 'ng2-charts';
 
 @Component({
   selector: 'app-dona',
-  templateUrl: './dona.component.html',
-  styles: [
-  ]
+  templateUrl: './dona.component.html'
 })
 export class DonaComponent {
 
   public doughnutChartLabels: Label[] = ['Download Sales', 'In-Store Sales', 'Mail-Order Sales', 'Other'];
-  public doughnutChartData: MultiDataSet = [
-    [350, 450, 100, 150]
-  ];
+  public doughnutChartData: MultiDataSet = [ [350, 450, 100, 150] ];
   public doughnutChartType: ChartType = 'doughnut';
 
   public colors: Color[] = [
