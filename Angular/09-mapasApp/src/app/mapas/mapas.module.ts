@@ -8,7 +8,6 @@ import { MarcadoresComponent } from './pages/marcadores/marcadores.component';
 import { ZoomRangeComponent } from './pages/zoom-range/zoom-range.component';
 import { PropiedadesComponent } from './pages/propiedades/propiedades.component';
 
-
 @NgModule({
   declarations: [
     MiniMapaComponent,

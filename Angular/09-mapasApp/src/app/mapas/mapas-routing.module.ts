@@ -1,12 +1,13 @@
 import { NgModule } from '@angular/core';
+
 import { Routes, RouterModule } from '@angular/router';
+
 import { FullScreenComponent } from './pages/full-screen/full-screen.component';
 import { ZoomRangeComponent } from './pages/zoom-range/zoom-range.component';
 import { MarcadoresComponent } from './pages/marcadores/marcadores.component';
 import { PropiedadesComponent } from './pages/propiedades/propiedades.component';
 
 const routes: Routes = [
-
   {
     path: '',
     children: [
@@ -17,7 +18,6 @@ const routes: Routes = [
       { path: '**', redirectTo: 'fullscreen' },
     ]
   }
-
 ];
 
 @NgModule({
