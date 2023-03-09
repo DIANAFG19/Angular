@@ -10,7 +10,6 @@ import * as mapboxgl from 'mapbox-gl';
       height: 100%;
       width: 100%; 
     }
-
     .row {
       background-color: white;
       border-radius: 5px;
@@ -29,7 +28,7 @@ export class ZoomRangeComponent implements AfterViewInit, OnDestroy {
   @ViewChild('mapa') divMapa!: ElementRef;
   mapa!: mapboxgl.Map;
   zoomLevel: number = 10;
-  center: [number, number] = [ -75.921029433568, 45.28719674822362 ];
+  center: [number, number] = [ -99.1566962, 19.4204611];
 
   constructor() {}
 
@@ -40,7 +39,6 @@ export class ZoomRangeComponent implements AfterViewInit, OnDestroy {
   }
 
   ngAfterViewInit(): void {
-
     this.mapa = new mapboxgl.Map({
       container: this.divMapa.nativeElement,
       style: 'mapbox://styles/mapbox/streets-v11',
@@ -64,10 +62,7 @@ export class ZoomRangeComponent implements AfterViewInit, OnDestroy {
       const { lng, lat } = target.getCenter();
       this.center = [lng, lat];
     });
-
-
   }
-
 
   zoomOut() {
     this.mapa.zoomOut();
