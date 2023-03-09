@@ -3,9 +3,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-agregar',
-  templateUrl: './agregar.component.html',
-  styles: [
-  ]
+  templateUrl: './agregar.component.html'
 })
 export class AgregarComponent {
 
@@ -21,7 +19,6 @@ export class AgregarComponent {
   tieneError( campo: string ): boolean {
     return this.miFormulario.get(campo)?.invalid || false;
   }
-
 
   cambiarNombre() {
     this.texto1 = Math.random().toString();
