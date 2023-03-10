@@ -20,14 +20,10 @@ const routes: Routes = [
       { path: '', redirectTo: '/dashboard', pathMatch: 'full' },
     ]
   },
-  
   { path: 'register', component: RegisterComponent },
   { path: 'login', component: LoginComponent },
-
   { path: '**', component: NopagefoundComponent },
 ];
-
-
 
 @NgModule({
   declarations: [],
