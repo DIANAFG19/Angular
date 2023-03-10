@@ -20,11 +20,11 @@ const crearUsuario = async(req, res = response) => {
         const dbUser = new Usuario( req.body );
 
         // Hashear la contraseña
-        //const salt = bcrypt.genSaltSync();
-        //dbUser.password = bcrypt.hashSync( password, salt );
+        const salt = bcrypt.genSaltSync();
+        dbUser.password = bcrypt.hashSync( password, salt );
 
         // Generar el JWT
-        //const token = await generarJWT( dbUser.id, name );
+        const token = await generarJWT( dbUser.id, name );
 
         // Crear usuario de DB
         await dbUser.save();
@@ -34,7 +34,7 @@ const crearUsuario = async(req, res = response) => {
             ok: true,
             uid: dbUser.id,
             name,
-            //token
+            token
         });
     } catch (error) {
         console.log(error);
