@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
 // Módulos
-import { AuthRoutingModule } from './auth/auth.routing.module';
+import { AuthRoutingModule } from './auth/auth.routing';
 import { PagesModule } from './pages/pages.module';
 
 import { NopagefoundComponent } from './nopagefound/nopagefound.component';
