@@ -8,9 +8,7 @@ import { AuthService } from '../../services/auth.service';
 
 @Component({
   selector: 'app-login',
-  templateUrl: './login.component.html',
-  styles: [
-  ]
+  templateUrl: './login.component.html'
 })
 export class LoginComponent {
 
@@ -23,14 +21,10 @@ export class LoginComponent {
                private router: Router, 
                private authService: AuthService) { }
 
-
-  login() {
-  
+  login() {  
     const { email, password } = this.miFormulario.value;
-
     this.authService.login( email, password )
       .subscribe( ok => {
-
         if ( ok === true ) {
           this.router.navigateByUrl('/dashboard');
         } else {

@@ -7,9 +7,7 @@ import { AuthService } from '../../services/auth.service';
 
 @Component({
   selector: 'app-register',
-  templateUrl: './register.component.html',
-  styles: [
-  ]
+  templateUrl: './register.component.html'
 })
 export class RegisterComponent {
 
@@ -23,22 +21,16 @@ export class RegisterComponent {
                private router: Router,
                private authService: AuthService ) { }
 
-
   registro() {
     const { name, email, password } = this.miFormulario.value;
-
     this.authService.registro( name, email, password )
       .subscribe( ok => {
-
         if ( ok === true ) {
           this.router.navigateByUrl('/dashboard');
         } else {
           Swal.fire('Error', ok, 'error');
         }
       });
-
   }
-
-
 
 }
