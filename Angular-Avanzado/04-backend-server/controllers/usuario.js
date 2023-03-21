@@ -5,10 +5,18 @@ const Usuario = require('../models/usuario');
 const { generarJWT } = require('../helpers/jwt');
 
 const getUsuarios = async(req, res) => {
-    const usuarios = await Usuario.find({}, 'nombre email role google');
+    const desde = Number(req.query.desde) || 0;
+    const [usuarios, total] = await Promise.all([
+        Usuario
+            .find({}, 'nombre email role google img')
+            .skip(desde)
+            .limit(5),
+        Usuario.countDocuments()
+    ]);
     res.json({
         ok: true,
-        usuarios
+        usuarios,
+        total
     });
 }
 
@@ -57,7 +65,7 @@ const actualizarUsuario = async (req, res = response) => {
     try {
         const usuarioDB = await Usuario.findById(uid);
 
-        if ( !usuarioDB ) {
+        if (!usuarioDB) {
             return res.status(404).json({
                 ok: false,
                 msg: 'No existe un usuario por ese id'
