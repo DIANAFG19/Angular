@@ -4,10 +4,10 @@ const Usuario = require('../models/usuario');
 const Medico = require('../models/medico');
 const Hospital = require('../models/hospital');
 
-const borrarImagen = ( path ) => {
-    if ( fs.existsSync( path ) ) {
+const borrarImagen = (path) => {
+    if (fs.existsSync(path)) {
         // borrar la imagen anterior
-        fs.unlinkSync( path );
+        fs.unlinkSync(path);
     }
 }
 

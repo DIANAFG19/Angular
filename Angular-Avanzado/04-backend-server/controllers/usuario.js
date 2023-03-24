@@ -75,6 +75,7 @@ const actualizarUsuario = async (req, res = response) => {
         // Actualizaciones
         const { password, google, email, ...campos } = req.body;
 
+        // Para el Usuario Normal
         if (usuarioDB.email !== email) {
             const existeEmail = await Usuario.findOne({ email });
             if (existeEmail) {
@@ -84,8 +85,17 @@ const actualizarUsuario = async (req, res = response) => {
                 });
             }
         }
+
+        // Para el Usuario Google
+        if (!usuarioDB.google){
+            campos.email = email;
+        } else if (usuarioDB.email !== email) {
+            return res.status(400).json({
+                ok: false,
+                msg: 'Usuario de google no pueden cambiar su correo'
+            });
+        }
         
-        campos.email = email;
         const usuarioActualizado = await Usuario.findByIdAndUpdate(uid, campos, { new: true });
         
         res.json({
