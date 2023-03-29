@@ -27,7 +27,7 @@ export class LoginComponent implements OnInit {
   constructor(private router: Router,
               private fb: FormBuilder,
               private usuarioService: UsuarioService,
-              private ngZone: NgZone ) { }
+              private ngZone: NgZone) { }
 
   ngOnInit(): void {
     this.renderButton();
@@ -70,7 +70,7 @@ export class LoginComponent implements OnInit {
     this.auth2.attachClickHandler(element, {},
         (googleUser) => {
             const id_token = googleUser.getAuthResponse().id_token;
-            console.log(id_token);
+            //console.log(id_token);
             this.usuarioService.loginGoogle(id_token)
               .subscribe(resp => {
                 // Navegar al Dashboard
