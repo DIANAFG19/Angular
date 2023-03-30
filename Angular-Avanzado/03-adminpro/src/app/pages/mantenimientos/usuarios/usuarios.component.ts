@@ -1,5 +1,8 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
+
 import Swal from 'sweetalert2';
+
+import { Subscription } from 'rxjs';
 import { delay } from 'rxjs/operators';
 
 import { Usuario } from '../../../models/usuario.model';
@@ -7,7 +10,6 @@ import { Usuario } from '../../../models/usuario.model';
 import { BusquedasService } from '../../../services/busquedas.service';
 import { ModalImagenService } from '../../../services/modal-imagen.service';
 import { UsuarioService } from '../../../services/usuario.service';
-import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-usuarios',
@@ -26,7 +28,6 @@ export class UsuariosComponent implements OnInit, OnDestroy {
   constructor(private usuarioService: UsuarioService,
               private busquedasService: BusquedasService,
               private modalImagenService: ModalImagenService) { }
-  
   ngOnDestroy(): void {
     this.imgSubs.unsubscribe();
   }
@@ -40,8 +41,8 @@ export class UsuariosComponent implements OnInit, OnDestroy {
 
   cargarUsuarios() {
     this.cargando = true;
-    this.usuarioService.cargarUsuarios( this.desde )
-      .subscribe( ({ total, usuarios }) => {
+    this.usuarioService.cargarUsuarios(this.desde)
+      .subscribe(({ total, usuarios }) => {
         this.totalUsuarios = total;
         this.usuarios = usuarios;
         this.usuariosTemp = usuarios;
@@ -64,7 +65,7 @@ export class UsuariosComponent implements OnInit, OnDestroy {
       return this.usuarios = this.usuariosTemp;
     }
     this.busquedasService.buscar('usuarios', termino)
-        .subscribe(resp => {
+        .subscribe((resp: Usuario[]) => {
           this.usuarios = resp;
         });
   }
@@ -80,7 +81,7 @@ export class UsuariosComponent implements OnInit, OnDestroy {
       showCancelButton: true,
       confirmButtonText: 'Si, borrarlo'
     }).then((result) => {
-      if (result.value) {
+      if (result.value) {   
         this.usuarioService.eliminarUsuario(usuario)
           .subscribe(resp => {
             this.cargarUsuarios();

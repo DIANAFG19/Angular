@@ -1,8 +1,8 @@
 import { Component } from '@angular/core';
 
-import { UsuarioService } from '../../services/usuario.service';
-
 import { Usuario } from '../../models/usuario.model';
+
+import { UsuarioService } from '../../services/usuario.service';
 
 @Component({
   selector: 'app-header',
@@ -12,7 +12,7 @@ export class HeaderComponent {
 
   public usuario: Usuario;
 
-  constructor( private usuarioService: UsuarioService) {
+  constructor(private usuarioService: UsuarioService) {
     this.usuario = usuarioService.usuario;
    }
 
