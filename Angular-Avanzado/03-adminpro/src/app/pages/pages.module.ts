@@ -3,9 +3,11 @@ import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
-import { ComponentsModule } from '../components/components.module';
-import { PipesModule } from '../pipes/pipes.module';
+// Modulos
 import { SharedModule } from '../shared/shared.module';
+import { ComponentsModule } from '../components/components.module';
+
+import { PipesModule } from '../pipes/pipes.module';
 
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { ProgressComponent } from './progress/progress.component';
@@ -21,6 +23,10 @@ import { MedicosComponent } from './mantenimientos/medicos/medicos.component';
 import { MedicoComponent } from './mantenimientos/medicos/medico.component';
 import { BusquedaComponent } from './busqueda/busqueda.component';
 
+
+
+
+
 @NgModule({
   declarations: [
     DashboardComponent,
@@ -35,7 +41,7 @@ import { BusquedaComponent } from './busqueda/busqueda.component';
     HospitalesComponent,
     MedicosComponent,
     MedicoComponent,
-    BusquedaComponent
+    BusquedaComponent,
   ],
   exports: [
     DashboardComponent,
@@ -48,8 +54,8 @@ import { BusquedaComponent } from './busqueda/busqueda.component';
     CommonModule,
     FormsModule,
     ReactiveFormsModule,
-    RouterModule,
     SharedModule,
+    RouterModule,
     ComponentsModule,
     PipesModule
   ]

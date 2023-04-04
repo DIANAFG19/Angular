@@ -21,9 +21,9 @@ export class HospitalesComponent implements OnInit, OnDestroy {
   public cargando: boolean = true;
   private imgSubs: Subscription;
 
-  constructor(private hospitalService: HospitalService,
-              private modalImagenService: ModalImagenService,
-              private busquedasService: BusquedasService) { }
+  constructor( private hospitalService: HospitalService,
+               private modalImagenService: ModalImagenService,
+               private busquedasService: BusquedasService ) { }
 
   ngOnDestroy(): void {
     this.imgSubs.unsubscribe();
@@ -31,43 +31,54 @@ export class HospitalesComponent implements OnInit, OnDestroy {
 
   ngOnInit(): void {
     this.cargarHospitales();
+
     this.imgSubs = this.imgSubs = this.modalImagenService.nuevaImagen
       .pipe(delay(100))
-      .subscribe(img => this.cargarHospitales());
+      .subscribe( img => this.cargarHospitales() );
   }
 
-  buscar(termino: string) {
-    if (termino.length === 0) {
+  buscar( termino: string ) {
+
+    if ( termino.length === 0 ) {
       return this.cargarHospitales();
     }
-    this.busquedasService.buscar('hospitales', termino)
-        .subscribe(resp => {
+
+    this.busquedasService.buscar( 'hospitales', termino )
+        .subscribe( resp => {
+
           this.hospitales = resp;
+
         });
   }
 
   cargarHospitales() {
+
     this.cargando = true;
     this.hospitalService.cargarHospitales()
-        .subscribe(hospitales => {
+        .subscribe( hospitales => {
           this.cargando = false;
           this.hospitales = hospitales;
         })
+
   }
 
-  guardarCambios(hospital: Hospital) {
-    this.hospitalService.actualizarHospital(hospital._id, hospital.nombre)
-        .subscribe(resp => {
-          Swal.fire('Actualizado', hospital.nombre, 'success');
+  guardarCambios( hospital: Hospital ) {
+
+    this.hospitalService.actualizarHospital( hospital._id, hospital.nombre )
+        .subscribe( resp => {
+          Swal.fire( 'Actualizado', hospital.nombre, 'success' );
         });
+
   }
 
-  eliminarHospital(hospital: Hospital) {
-    this.hospitalService.borrarHospital(hospital._id)
-        .subscribe(resp => {
+  eliminarHospital( hospital: Hospital ) {
+
+    this.hospitalService.borrarHospital( hospital._id )
+        .subscribe( resp => {
           this.cargarHospitales();
-          Swal.fire('Borrado', hospital.nombre, 'success');
+          Swal.fire( 'Borrado', hospital.nombre, 'success' );
         });
+
   }
 
   async abrirSweetAlert() {
@@ -78,16 +89,20 @@ export class HospitalesComponent implements OnInit, OnDestroy {
       inputPlaceholder: 'Nombre del hospital',
       showCancelButton: true,
     });
+    
     if( value.trim().length > 0 ) {
-      this.hospitalService.crearHospital(value)
-        .subscribe((resp: any) => {
-          this.hospitales.push(resp.hospital)
+      this.hospitalService.crearHospital( value )
+        .subscribe( (resp: any) => {
+          this.hospitales.push( resp.hospital )
         })
     }
   }
 
   abrirModal(hospital: Hospital) {
-    this.modalImagenService.abrirModal('hospitales', hospital._id, hospital.img);
+
+    this.modalImagenService.abrirModal( 'hospitales', hospital._id, hospital.img );
+
   }
 
 }
+ 
