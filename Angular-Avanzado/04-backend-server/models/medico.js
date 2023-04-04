@@ -18,11 +18,15 @@ const MedicoSchema = Schema({
         ref: 'Hospital',
         required: true
     },
+    
 });
+
 
 MedicoSchema.method('toJSON', function() {
     const { __v, ...object } = this.toObject();
     return object;
 })
 
-module.exports = model('Medico', MedicoSchema);
+
+
+module.exports = model( 'Medico', MedicoSchema );
