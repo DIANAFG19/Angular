@@ -2,13 +2,11 @@
     <div class="col-12">
         <div class="card">
             <div class="card-body">
-                
                 <input type="text"
                         class="form-control"
                         placeholder="Buscar usuario..."
                         (keyup)="buscar( txtTermino.value )"
                         #txtTermino/>
-
             </div>
         </div>
     </div>
@@ -17,16 +15,13 @@
 <div class="row animated fadeIn fast"
      *ngIf="cargando">
     <div class="col-12">
-        
         <div class="alert alert-info text-center">
           <h4 class="alert-heading">Cargando</h4>
           <i class="fa fa-spin fa-refresh fa-2x"></i>
           <p class="mb-0">Por favor espere</p>
         </div>
-
     </div>
 </div> 
-
 
 <div class="row animated fadeIn fast" 
     *ngIf="!cargando">
@@ -57,7 +52,6 @@
                                 </td>
                                 <td>{{ usuario.email }}</td>
                                 <td>{{ usuario.nombre }}</td>
-
                                 <td>
                                     <select class="form-control"
                                             [(ngModel)]="usuario.role"
@@ -66,12 +60,10 @@
                                         <option value="USER_ROLE">User</option>
                                     </select>
                                 </td>
-
                                 <td>
                                     <span *ngIf="usuario.google" class="label label-danger">Google</span>    
                                     <span *ngIf="!usuario.google" class="label label-info">Email</span>    
                                 </td>
-
                                 <td class="text-nowrap text-center">                                  
                                     <a data-toggle="tooltip" 
                                         data-original-title="Borrar"
@@ -81,17 +73,14 @@
                                     </a>
                                 </td>
                             </tr>
-                            
                         </tbody>
                     </table>
                 </div>
-
                 <div *ngIf="txtTermino.value.length === 0">
                     <button (click)="cambiarPagina(-5)" class="btn btn-secondary">Anteriores</button>
                     &nbsp;
                     <button (click)="cambiarPagina(5)" class="btn btn-secondary">Siguientes</button>
                 </div>
-
             </div>
         </div>
     </div>
