@@ -15,12 +15,11 @@ const {
     borrarHospital
 } = require('../controllers/hospitales')
 
-
 const router = Router();
 
-router.get( '/', getHospitales );
+router.get('/', getHospitales);
 
-router.post( '/',
+router.post('/',
     [
         validarJWT,
         check('nombre','El nombre del hospital es necesario').not().isEmpty(),
@@ -29,7 +28,7 @@ router.post( '/',
     crearHospital 
 );
 
-router.put( '/:id',
+router.put('/:id',
     [
         validarJWT,
         check('nombre','El nombre del hospital es necesario').not().isEmpty(),
@@ -38,11 +37,9 @@ router.put( '/:id',
     actualizarHospital
 );
 
-router.delete( '/:id',
+router.delete('/:id',
     validarJWT,
     borrarHospital
 );
-
-
 
 module.exports = router;

@@ -16,12 +16,11 @@ const {
     getMedicoById
 } = require('../controllers/medicos')
 
-
 const router = Router();
 
-router.get( '/', validarJWT, getMedicos );
+router.get('/', validarJWT, getMedicos);
 
-router.post( '/',
+router.post('/',
     [
         validarJWT,
         check('nombre','El nombre del médico es necesario').not().isEmpty(),
@@ -31,7 +30,7 @@ router.post( '/',
     crearMedico 
 );
 
-router.put( '/:id',
+router.put('/:id',
     [
         validarJWT,
         check('nombre','El nombre del médico es necesario').not().isEmpty(),
@@ -41,19 +40,14 @@ router.put( '/:id',
     actualizarMedico
 );
 
-router.delete( '/:id',
+router.delete('/:id',
     validarJWT,
     borrarMedico
 );
 
-router.get( '/:id',
+router.get('/:id',
     validarJWT,
     getMedicoById
 );
 
-
-
 module.exports = router;
-
-
-
