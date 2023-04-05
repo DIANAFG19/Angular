@@ -5,16 +5,13 @@ import { AuthGuard } from '../guards/auth.guard';
 
 import { PagesComponent } from './pages.component';
 
-
-
-
 const routes: Routes = [
     { 
         path: 'dashboard', 
         component: PagesComponent,
         canActivate: [ AuthGuard ],
         canLoad: [ AuthGuard ],
-        loadChildren: () => import('./child-routes.module').then( m => m.ChildRoutesModule )
+        loadChildren: () => import('./child-routes.module').then(m => m.ChildRoutesModule)
     },
 ];
 
@@ -23,5 +20,3 @@ const routes: Routes = [
     exports: [ RouterModule ]
 })
 export class PagesRoutingModule {}
-
-
