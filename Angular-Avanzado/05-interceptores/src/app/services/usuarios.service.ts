@@ -13,7 +13,7 @@ export class UsuariosService {
   obtenerUsuarios() {
     let params = new HttpParams().append('page', '2');
     params = params.append('nombre', 'Fernando Herrera');
-    return this.http.get(`https://reqres123.in/api/user`, {
+    return this.http.get(`https://reqres.in/api/user`, {
       params
     }).pipe(
       map(resp => resp['data']),
